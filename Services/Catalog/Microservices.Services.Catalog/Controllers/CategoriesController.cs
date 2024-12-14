@@ -1,6 +1,7 @@
 ﻿using Microservice.Shared.ControllerBases;
 using Microservices.Services.Catalog.Dtos.CategoryDtos;
 using Microservices.Services.Catalog.Services.CategoryServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,11 @@ namespace Microservices.Services.Catalog.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoiesController : CustomBaseController
+    public class CategoriesController : CustomBaseController
     {
         private readonly ICategoryService _categoryService;
 
-        public CategoiesController(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
