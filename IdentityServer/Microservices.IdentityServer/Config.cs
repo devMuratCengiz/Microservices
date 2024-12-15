@@ -15,6 +15,7 @@ namespace Microservices.IdentityServer
         {
             new ApiResource("ResourceCatalog"){Scopes={"CatalogFullPermission"}},
             new ApiResource("ResourcePhotoStock"){Scopes={"PhotoStockFullPermission"}},
+            new ApiResource("ResourceBasket"){Scopes={"BasketFullPermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -32,6 +33,7 @@ namespace Microservices.IdentityServer
             {
                 new ApiScope("CatalogFullPermission","Catalog API için tam erişim."),
                 new ApiScope("PhotoStockFullPermission","Photo Stock API için tam erişim."),
+                new ApiScope("BasketFullPermission","Basket API için tam erişim."),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -54,7 +56,7 @@ namespace Microservices.IdentityServer
                     AllowOfflineAccess = true,
                     ClientSecrets={new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes={ IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName, "roles" },
+                    AllowedScopes={ "BasketFullPermission", IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName, "roles" },
                     AccessTokenLifetime=1*60*60,
                     RefreshTokenExpiration=TokenExpiration.Absolute,
                     AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60) - DateTime.Now).TotalSeconds,

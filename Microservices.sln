@@ -22,6 +22,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.IdentityServer", "IdentityServer\Microservices.IdentityServer\Microservices.IdentityServer.csproj", "{47C441B3-7429-47C2-983B-CA59B65A6195}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{C709AAC7-54B6-4CDD-BA85-EA725FEC795B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Services.PhotoStock", "Services\PhotoStock\Microservices.Services.PhotoStock\Microservices.Services.PhotoStock.csproj", "{FB25995C-3A6B-422C-847A-2E72690BF694}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{8BF0301E-E37B-4E59-96BA-2CCEF9925B7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Services.Basket", "Services\Basket\Microservices.Services.Basket\Microservices.Services.Basket.csproj", "{71734E73-A8C7-4DA5-AEEB-FEA9501685E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +48,14 @@ Global
 		{47C441B3-7429-47C2-983B-CA59B65A6195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47C441B3-7429-47C2-983B-CA59B65A6195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47C441B3-7429-47C2-983B-CA59B65A6195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB25995C-3A6B-422C-847A-2E72690BF694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB25995C-3A6B-422C-847A-2E72690BF694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB25995C-3A6B-422C-847A-2E72690BF694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB25995C-3A6B-422C-847A-2E72690BF694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71734E73-A8C7-4DA5-AEEB-FEA9501685E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71734E73-A8C7-4DA5-AEEB-FEA9501685E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71734E73-A8C7-4DA5-AEEB-FEA9501685E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71734E73-A8C7-4DA5-AEEB-FEA9501685E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +65,9 @@ Global
 		{DBA28939-3B0E-47FB-BB0C-C0C496557177} = {B1C878CD-CE6F-4109-83E4-B613149954C1}
 		{F0E9C675-93E4-46AC-84E7-8C4A0379B6DA} = {1579FE9D-294E-4D73-9016-3FED5336A03A}
 		{47C441B3-7429-47C2-983B-CA59B65A6195} = {C9C57ECF-754A-4ABE-A365-B976C1F1697C}
+		{C709AAC7-54B6-4CDD-BA85-EA725FEC795B} = {7D1D751F-E4A2-4899-85FA-AA6DC5A21A0C}
+		{FB25995C-3A6B-422C-847A-2E72690BF694} = {C709AAC7-54B6-4CDD-BA85-EA725FEC795B}
+		{8BF0301E-E37B-4E59-96BA-2CCEF9925B7E} = {7D1D751F-E4A2-4899-85FA-AA6DC5A21A0C}
+		{71734E73-A8C7-4DA5-AEEB-FEA9501685E1} = {8BF0301E-E37B-4E59-96BA-2CCEF9925B7E}
 	EndGlobalSection
 EndGlobal
