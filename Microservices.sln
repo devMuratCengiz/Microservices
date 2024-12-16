@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{EA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Services.Discount", "Services\Discount\Microservices.Services.Discount\Microservices.Services.Discount.csproj", "{40349676-BD71-4FA0-9B38-42284206FDF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{DE5BC2FD-78FB-4A79-98C6-29E32CA71CF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,5 +81,6 @@ Global
 		{71734E73-A8C7-4DA5-AEEB-FEA9501685E1} = {8BF0301E-E37B-4E59-96BA-2CCEF9925B7E}
 		{EA6C9F0B-05A3-4667-8318-F963EF9D5EE1} = {7D1D751F-E4A2-4899-85FA-AA6DC5A21A0C}
 		{40349676-BD71-4FA0-9B38-42284206FDF6} = {EA6C9F0B-05A3-4667-8318-F963EF9D5EE1}
+		{DE5BC2FD-78FB-4A79-98C6-29E32CA71CF4} = {7D1D751F-E4A2-4899-85FA-AA6DC5A21A0C}
 	EndGlobalSection
 EndGlobal

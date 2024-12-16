@@ -4,6 +4,7 @@ SERVICES
  Photo Stock Api = 5012
  Basket Api = 5013
  Discount Api = 5014
+ Order Api = 5015
 
 
 Identity Server = 5001
