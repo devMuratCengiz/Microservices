@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Microservice.Shared\Microservice.Shared.csproj" />
+    <ProjectReference Include="..\Microservices.Services.Order.Domain\Microservices.Services.Order.Domain.csproj" />
+    <ProjectReference Include="..\Microservices.Services.Order.Infrastructure\Microservices.Services.Order.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
