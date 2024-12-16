@@ -3,6 +3,7 @@ SERVICES
  Catalog Apý = 5011
  Photo Stock Api = 5012
  Basket Api = 5013
+ Discount Api = 5014
 
 
 Identity Server = 5001
