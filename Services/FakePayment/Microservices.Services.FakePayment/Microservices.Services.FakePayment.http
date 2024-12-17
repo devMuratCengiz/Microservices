@@ -1,0 +1,6 @@
+@Microservices.Services.FakePayment_HostAddress = http://localhost:5253
+
+GET {{Microservices.Services.FakePayment_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
