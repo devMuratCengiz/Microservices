@@ -5,6 +5,7 @@ SERVICES
  Basket Api = 5013
  Discount Api = 5014
  Order Api = 5015
+ Fake Payment Api = 5016
 
 
 Identity Server = 5001
