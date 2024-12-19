@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\photos\" />
+    <ProjectReference Include="..\..\..\Shared\Microservice.Shared\Microservice.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\Microservice.Shared\Microservice.Shared.csproj" />
+    <Folder Include="wwwroot\photos\" />
   </ItemGroup>
 
 </Project>
