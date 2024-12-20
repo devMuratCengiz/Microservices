@@ -1,5 +1,7 @@
+using MassTransit;
 using MediatR;
 using Microservice.Shared.Services;
+using Microservices.Services.Order.Application.Consumer;
 using Microservices.Services.Order.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +12,30 @@ using Microsoft.IdentityModel.JsonWebTokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddMassTransit(x =>
+{
+
+    x.AddConsumer<CreateOrderMessageCommandConsumer>();
+
+    //default port 5672
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(builder.Configuration["RabbitMQUrl"], "/", host =>
+        {
+            host.Username("guest");
+            host.Password("guest");
+        });
+
+        cfg.ReceiveEndpoint("create-order-service", e =>
+        {
+            e.ConfigureConsumer<CreateOrderMessageCommandConsumer>(context);
+        });
+
+    });
+});
+
+builder.Services.AddMassTransitHostedService();
 
 var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 JsonWebTokenHandler.DefaultInboundClaimTypeMap.Clear();

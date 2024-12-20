@@ -79,9 +79,46 @@ namespace Microservices.Web.Services
             return response.Data;
         }
 
-        public Task SuspendOrder(CheckoutInfoInput checkoutInfoInput)
+        public async Task<OrderSuspendViewModel> SuspendOrder(CheckoutInfoInput checkoutInfoInput)
         {
-            throw new NotImplementedException();
+            var basket = await _basketService.Get();
+            var createOrderInput = new CreateOrderInput()
+            {
+                BuyerId = _sharedIdentityService.GetUserId,
+                Address = new CreateAddressInput { Province = checkoutInfoInput.Province, District = checkoutInfoInput.District, Street = checkoutInfoInput.Street, Line = checkoutInfoInput.Line, ZipCode = checkoutInfoInput.ZipCode }
+
+            };
+            basket.BasketItems.ForEach(x =>
+            {
+                var orderItem = new CreateOrderItemInput
+                {
+                    ProductId = x.CourseId,
+                    Price = x.GetCurrentPrice,
+                    PictureUrl = "",
+                    ProductName = x.CourseName
+                };
+                createOrderInput.OrderItems.Add(orderItem);
+            });
+            
+            var paymentInfoInput = new PaymentInfoInput()
+            {
+                CardName = checkoutInfoInput.CardName,
+                CardNumber = checkoutInfoInput.CardNumber,
+                Expiration = checkoutInfoInput.Expiration,
+                CVV = checkoutInfoInput.CVV,
+                TotalPrice = basket.TotalPrice,
+                Order = createOrderInput
+            };
+
+            var responsePayment = await _paymentService.ReceivePayment(paymentInfoInput);
+
+            if (!responsePayment)
+            {
+                return new OrderSuspendViewModel() { Error = "Ödeme Alınamadı", IsSuccessful = false };
+            }
+            await _basketService.Delete();
+            return new OrderSuspendViewModel() {IsSuccessful = true};
+
         }
     }
 }
